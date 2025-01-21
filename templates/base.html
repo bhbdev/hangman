@@ -1,0 +1,44 @@
+{{ define "header" -}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="rendered" content="{{ .RenderedTemplate }}">
+    <title>{{ with .Title }}{{ . }} | {{ end }}HangMan</title>
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+  </head>
+  <body>
+{{ end }}
+
+{{ define "page/header" }}
+{{- template "header" . }}
+    <div class="main-grid">
+        <header>
+          <h1>😵 HANGMAN</h1>
+        </header>
+        <nav id="menu">
+          <ul>
+            <li><a href="/play">Play</a></li>
+            {{/*  <li><a href="/scores">Scores</a></li>
+            <li><a href="/rules">Rules</a></li>  */}}
+          </ul>
+        </nav>
+        <main>
+{{ end }}
+
+{{ define "page/footer" }}
+        </main>
+        <footer>
+          <p>&copy; 2021 HangMan</p>
+        </footer>
+    </div>
+{{ template "footer" . -}}
+{{ end }}
+
+
+{{ define "footer" }}
+    <script src="/assets/js/hangman.js"></script>
+  </body>
+</html>
+{{- end }}
